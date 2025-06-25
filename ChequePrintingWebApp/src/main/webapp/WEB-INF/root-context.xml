@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+    <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+    <property name="url" value="jdbc:mysql://127.0.0.1:3307/chequeprintdb"/>
+    <property name="username" value="root"/>
+    <property name="password" value="root@123"/>
+</bean>
+
+
+
+<bean id="RoleService" class="com.ui.dao.Impl.RoleServiceImpl">
+		<property name="dataSource" ref="dataSource"></property> 
+	</bean>
+	
+	
+<bean id="UserService" class="com.ui.dao.Impl.UserServiceImpl">
+		<property name="dataSource" ref="dataSource"></property> 
+	</bean>
+	
+	
+	
+	
+	<bean id="supplierService" class="com.ui.dao.Impl.SupplierServiceImpl">
+    <property name="dataSource" ref="dataSource" />
+</bean>
+
+
+<bean id="BankService" class="com.ui.dao.Impl.BankServiceImpl">
+		<property name="dataSource" ref="dataSource"></property> 
+	</bean>
+	
+<bean id="BankAccountService" class="com.ui.dao.Impl.BankAccountServiceImpl">
+		<property name="dataSource" ref="dataSource"></property> 
+	</bean>
+	
+	<bean id="ChequeBookService" class="com.ui.dao.Impl.ChequeBookServiceImpl">
+		<property name="dataSource" ref="dataSource"></property> 
+	</bean>
+	
+	
+	<bean id="LayoutService" class="com.ui.dao.Impl.LayoutServiceImpl">
+		<property name="dataSource" ref="dataSource"></property> 
+	</bean>
+	
+	
+	
+	<bean id="ChequeService" class="com.ui.dao.Impl.ChequeServiceImpl">
+		<property name="dataSource" ref="dataSource"></property> 
+	</bean>
+		<!--<bean id="ChequeLayoutService" class="com.ui.dao.Impl.ChequeLayoutServiceImpl">
+		<property name="dataSource" ref="dataSource"></property> 
+	</bean>-->
+	
+	<!--
+		<bean id="SignatoryService" class="com.ui.dao.Impl.SignatoryServiceImpl">
+		<property name="dataSource" ref="dataSource"></property> 
+	</bean>
+	-->
+	
+	
+	<!--<bean id="ChequeService" class="com.ui.dao.Impl.ChequeServiceImpl">
+		<property name="dataSource" ref="dataSource"></property> 
+	</bean>
+	
+	
+	<bean id="ChequeSignService" class="com.ui.dao.Impl.ChequeSignServiceImpl">
+		<property name="dataSource" ref="dataSource"></property> 
+	</bean>-->
+	
+	<!--<bean id="SupplierServiceImpl" class="com.ui.dao.Impl.SupplierServiceImpl">
+		<property name="dataSource" ref="dataSource"></property> 
+	</bean>
+	
+
+	<bean id="ChequeServiceImpl" class="com.ui.dao.Impl.ChequeServiceImpl">
+		<property name="dataSource" ref="dataSource"></property> 
+	</bean>
+	
+	<bean id="BankAccountServiceImpl" class="com.ui.dao.Impl.BankAccountServiceImpl">
+		<property name="dataSource" ref="dataSource"></property> 
+	</bean>
+	
+	<bean id="SignatoryServiceImpl" class="com.ui.dao.Impl.SignatoryServiceImpl">
+		<property name="dataSource" ref="dataSource"></property> 
+	</bean>
+	
+	
+	<bean id="ChequeSignServiceImpl" class="com.ui.dao.Impl.ChequeSignServiceImpl">
+		<property name="dataSource" ref="dataSource"></property> 
+	</bean>-->
+</beans>
